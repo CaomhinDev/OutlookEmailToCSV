@@ -9,6 +9,7 @@ rows = [] #All emails
 outlook = win32com.client.Dispatch('outlook.application')
 mapi = outlook.GetNamespace("MAPI")
 print("Sent messages")
+# Folder reference https://docs.microsoft.com/en-us/office/vba/api/outlook.oldefaultfolders
 for folder in mapi.GetDefaultFolder(6).Folders:
     for message in folder.Items:
         folderName = folder.Name
